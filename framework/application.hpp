@@ -41,6 +41,12 @@ public:
 
 
   /**
+   * Image display method
+   */
+  virtual void draw(void) = 0; 
+
+  
+  /**
    * Window initialization and display
    */
   void run();
