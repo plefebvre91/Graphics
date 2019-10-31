@@ -21,7 +21,7 @@ DEALINGS IN THE SOFTWARE. */
 #include "application.hpp"
 
 application::application():
-  _window(sf::VideoMode(800, 600), "SFML window"){}
+  _window(sf::VideoMode(500, 500), "Graphics"){}
 
 void application::run()
 {

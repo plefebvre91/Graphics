@@ -31,16 +31,16 @@ public:
   /**
    * Constructor, creates the central square
    */
-  square();
+  square(sf::Vector2f center, float size);
   
   /**
    * Draw the square
    */
   void draw(sf::RenderWindow& window);
 
-private:
-  sf::Vector2f center;
-  double size;
+
+  sf::Vector2f _center;
+  float _size;
   sf::RectangleShape rectangle;
 };
 

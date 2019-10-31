@@ -19,15 +19,24 @@ FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE. */
 
 #include "square.hpp"
+#include <iostream>
 
-square::square():center(0.0, 0.0), size(100.0), rectangle() { }
+square::square(sf::Vector2f center, float size):
+  _center(center), _size(size), rectangle() {}
+
 
 void square::draw(sf::RenderWindow& window)
 {
-  sf::Vector2u ws = window.getSize();
+  sf::Vector2u ws(window.getSize());
+  sf::Vector2f size(_size*(float)ws.x, _size*(float)ws.y);
+
+  sf::Vector2f position;
+  position.x = (_center.x * (float)ws.x/2  + ws.x/2) - size.x/2;
+  position.y = (_center.y * (float)ws.y/2  + ws.y/2) - size.y/2;
   
-  rectangle.setPosition(center.x + ws.x /2 - size/2, center.y + ws.y/2 - size/2);
-  rectangle.setFillColor(sf::Color(0, 0, 250));
-  rectangle.setSize(sf::Vector2f(size, size));
+  rectangle.setPosition(position);
+  rectangle.setSize(size);
+  rectangle.setFillColor(sf::Color(200, 200, 0));
+
   window.draw(rectangle);
 }

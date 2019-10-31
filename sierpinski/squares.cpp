@@ -22,13 +22,35 @@ DEALINGS IN THE SOFTWARE. */
 
 squares::squares()
 {
-  _s.push_back(square());
+  _s.push_back(*(new square(sf::Vector2f(0,0), 0.3)));
 }
 
 void squares::add_one_step()
 {
-  return;
+  std::vector<square> tmp;
+  for(auto s: _s)
+  {
+    for(int i=0; i<3; i++){
+      for(int j=0; j<3; j++){
+	//	if ((i != 1) && (j != 1))
+	{
+	  float ix = (float)i;
+	  float jy = (float)j;
+	  tmp.push_back(*(new square(
+	     sf::Vector2f(s._center.x + s._size*2 - ix*2*s._size,
+			  s._center.y + s._size*2 - jy*2*s._size),
+			  s._size/3.0)));
+	}
+      }
+    }
+  }
+
+  for(auto e: tmp)
+    {
+      _s.push_back(e);
+    }
 }
+
 
 void squares::draw(sf::RenderWindow& window)
 {

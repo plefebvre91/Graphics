@@ -20,7 +20,7 @@ DEALINGS IN THE SOFTWARE. */
 
 #include "sierpinski.hpp"
 
-#define SIERPINSKI_STEPS 3
+#define SIERPINSKI_STEPS 4
 
 void sierpinski::process(void)
 {
