@@ -40,7 +40,12 @@ public:
    */
   void draw(sf::RenderWindow& window);
 
+  /**
+   * Destructor
+   */
+  ~squares();
+  
 private:
-  std::vector<square> _s;
+  std::vector<square*> _s;
 };
 

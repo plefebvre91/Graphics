@@ -22,7 +22,7 @@ DEALINGS IN THE SOFTWARE. */
 #include <iostream>
 
 square::square(sf::Vector2f center, float size):
-  _center(center), _size(size), rectangle() {}
+  _center(center), _size(size) {}
 
 
 void square::draw(sf::RenderWindow& window)
@@ -33,10 +33,11 @@ void square::draw(sf::RenderWindow& window)
   sf::Vector2f position;
   position.x = (_center.x * (float)ws.x/2  + ws.x/2) - size.x/2;
   position.y = (_center.y * (float)ws.y/2  + ws.y/2) - size.y/2;
-  
+
+  sf::RectangleShape rectangle;
   rectangle.setPosition(position);
   rectangle.setSize(size);
-  rectangle.setFillColor(sf::Color(200, 200, 0));
+  rectangle.setFillColor(sf::Color(200, 200, 200));
 
   window.draw(rectangle);
 }

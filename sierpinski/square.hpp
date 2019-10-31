@@ -24,9 +24,12 @@ DEALINGS IN THE SOFTWARE. */
 #include "SFML/Window.hpp"
 #include "SFML/Graphics.hpp"
 
-class square
+struct square
 {
-public:
+  /**
+   * Default constructor
+   */
+  square() = default;
 
   /**
    * Constructor, creates the central square
@@ -38,10 +41,15 @@ public:
    */
   void draw(sf::RenderWindow& window);
 
-
+  /**
+   * Square position (between -1 and 1)
+   */
   sf::Vector2f _center;
+
+  /**
+   * Edge size (between 0 and 1)
+   */
   float _size;
-  sf::RectangleShape rectangle;
 };
 
 #endif
