@@ -13,7 +13,10 @@ cmake ..
 make
 ```
 
-Executables are genrated the build/bin directory.
+Executables are generated the build/bin directory:
+
+- Sierpinski carpet fractal
+- Sierpinksi triangle fractal
 
 ## Dependancies
 
