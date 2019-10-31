@@ -18,18 +18,30 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
 DEALINGS IN THE SOFTWARE. */
 
-#include "sierpinski.hpp"
+#ifndef _SQUARE_HPP_
+#define _SQUARE_HPP_
 
-#define SIERPINSKI_STEPS 3
+#include "SFML/Window.hpp"
+#include "SFML/Graphics.hpp"
 
-void sierpinski::process(void)
+class square
 {
-  for(int i=0; i<SIERPINSKI_STEPS; i++)
-    _squares.add_one_step();     
-}
+public:
 
+  /**
+   * Constructor, creates the central square
+   */
+  square();
+  
+  /**
+   * Draw the square
+   */
+  void draw(sf::RenderWindow& window);
 
-void sierpinski::draw(void)
-{
-  _squares.draw(_window);
-}
+private:
+  sf::Vector2f center;
+  double size;
+  sf::RectangleShape rectangle;
+};
+
+#endif

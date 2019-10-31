@@ -18,18 +18,29 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
 DEALINGS IN THE SOFTWARE. */
 
-#include "sierpinski.hpp"
+#include <vector>
+#include "square.hpp"
 
-#define SIERPINSKI_STEPS 3
-
-void sierpinski::process(void)
+class squares
 {
-  for(int i=0; i<SIERPINSKI_STEPS; i++)
-    _squares.add_one_step();     
-}
+public:
 
+  /**
+   * Constructor, add central square to collection
+   */
+  squares();
 
-void sierpinski::draw(void)
-{
-  _squares.draw(_window);
-}
+  /**
+   * Computes positions of 8 surrounding squares
+   */
+  void add_one_step();
+
+  /**
+   * Draw all the squares in collection
+   */
+  void draw(sf::RenderWindow& window);
+
+private:
+  std::vector<square> _s;
+};
+

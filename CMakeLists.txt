@@ -8,7 +8,9 @@ include_directories(framework/ sierpinski/)
 
 set(SRC_FILES ../main.cpp
               framework/application.cpp 
-              sierpinski/sierpinski.cpp)
+              sierpinski/sierpinski.cpp
+	      sierpinski/square.cpp
+	      sierpinski/squares.cpp)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 

@@ -18,18 +18,20 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
 DEALINGS IN THE SOFTWARE. */
 
-#include "sierpinski.hpp"
+#include "squares.hpp"
 
-#define SIERPINSKI_STEPS 3
-
-void sierpinski::process(void)
+squares::squares()
 {
-  for(int i=0; i<SIERPINSKI_STEPS; i++)
-    _squares.add_one_step();     
+  _s.push_back(square());
 }
 
-
-void sierpinski::draw(void)
+void squares::add_one_step()
 {
-  _squares.draw(_window);
+  return;
+}
+
+void squares::draw(sf::RenderWindow& window)
+{
+  for(auto s: _s)
+    s.draw(window);
 }
