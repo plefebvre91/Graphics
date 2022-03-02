@@ -1,6 +1,6 @@
 # Graphcis
 
-Small 2D/3D projects using SFML library
+Small 2D/3D projects using Shader or SFML library.
 
 ## Compilation
 
@@ -18,9 +18,12 @@ Executables are generated the build/bin directory:
 - Sierpinski carpet fractal
 - Sierpinksi triangle fractal
 
+The shaders can be executed on [Shader Toy](https://www.shadertoy.com).
+
 ## Dependancies
 
 SFML
+
 
 ## License
 
